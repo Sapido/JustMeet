@@ -1,0 +1,66 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title class="stroke">
+            Welcome to JustMeet! ☻
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <!--PAGE REFRESHER-------------------------------------------------------------------------------------------------->
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content>
+        </ion-refresher-content>
+    </ion-refresher>
+
+    <!--POST CARD------------------------------------------------------------------------------------------------------->    
+    <ion-list>
+        <ion-card *ngFor="let post of cards">
+            <ion-card-header>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col size="10">
+                            <ion-card-subtitle class="nome">{{post.publisher}}</ion-card-subtitle>
+                            <ion-card-subtitle>pubblicato il: {{post.dateofpublishing}} alle: {{post.timeofpublishing}}</ion-card-subtitle>
+                        </ion-col>
+                        <ion-col>
+                            <ion-badge class="side">{{post.partecipants.length}}/{{post.maxpartecipants}}</ion-badge>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-card-header>
+            <div>
+                <ion-title>{{post.title}}</ion-title>
+                <ion-card-subtitle class="activity">{{post.activity}}</ion-card-subtitle>
+            </div>
+            <ion-card-content>
+                {{post.details}}
+            </ion-card-content>
+            <ion-footer>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col class="botcol">
+                            <ion-card-subtitle class="place">{{post.place}}</ion-card-subtitle>
+                        </ion-col>
+                        <ion-col class="botcol">
+                            <ion-card-subtitle class="data">{{post.dateofevent}}</ion-card-subtitle>
+                            <ion-card-subtitle class="ora">{{post.timeofevent}}</ion-card-subtitle>
+                        </ion-col>
+                        <ion-col>
+                            <ion-button (click)="moreinfo(post)" class="side">info</ion-button>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-footer>
+        </ion-card>
+    </ion-list>
+
+    <!--INFINITE SCROLLER----------------------------------------------------------------------------------------------
+    <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+        <ion-infinite-scroll-content>
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+-->
+</ion-content>
+
+<app-botbar></app-botbar>

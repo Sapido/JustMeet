@@ -1,0 +1,56 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title class="stroke">Aggiungi un post</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-card>
+    <ion-item>
+        <ion-label position="floating">Titolo </ion-label>
+        <ion-input [(ngModel)]="title" type="text" placeholder="Seleziona un titolo"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Attività</ion-label>
+        <ion-select [(ngModel)]='activity' okText="Okay" cancelText="Cancella" placeholder="seleziona attività">
+            <ion-select-option value="Sport">Sport</ion-select-option>
+            <ion-select-option value="Gruppostudio">Gruppo studio</ion-select-option>
+            <ion-select-option value="Ripetizioni">Ripetizioni</ion-select-option>
+            <ion-select-option value="Tornei computer">Tornei computer</ion-select-option>
+            <ion-select-option value="Trasporti">Trasporti</ion-select-option>
+        </ion-select>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Data</ion-label>
+        <ion-datetime [(ngModel)]='dateOfEvent' displayFormat="DD-MMMM-YYYY" min={{todaydate}} max="2099-12-12" placeholder="Seleziona data">
+        </ion-datetime>
+        <!--<ionic-calendar-date-picker></ionic-calendar-date-picker>-->
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Orario</ion-label>
+        <ion-datetime [(ngModel)]='timeOfEvent' display-format="HH:mm" placeholder="Seleziona orario"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+        <ion-label position="floating">Luogo</ion-label>
+        <ion-input [(ngModel)]='place' type="text" placeholder="Seleziona il luogo"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label position="floating">Partecipanti </ion-label>
+        <ion-input [(ngModel)]='maxPartecipants' type="number" placeholder="numero di partecipanti"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label position="stacked">Dettagli</ion-label>
+        <ion-textarea [(ngModel)]='details' type="text" placeholder="Se desideri puoi aggiungere qua dei dettagli"></ion-textarea>
+    </ion-item>
+
+    <section>
+        <ion-button (click)="createPost()" expand="block" id='botto'>Pubblica!</ion-button>
+    </section>
+</ion-card>
+
+<app-botbar></app-botbar>

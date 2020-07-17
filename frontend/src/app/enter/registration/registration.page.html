@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start" style="color: white;">
+            <ion-back-button defaultHref="/login"></ion-back-button>
+        </ion-buttons>
+        
+        <ion-title class="stroke">
+            Registrazione
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<div class="image">
+    <img src="../../../assets/justmeet.PNG">
+</div>
+
+<ion-card class="form">
+    <ion-item>
+        <ion-input [(ngModel)]='rgsuser' type="text" placeholder="Username" value=""></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-input [(ngModel)]='rgsemail' type="text" placeholder="gmail account" value=""></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-input [(ngModel)]='rgspassword' type="Password" placeholder="Password" value=""></ion-input>
+    </ion-item>
+
+    <ion-button (click)="registration()" expand="block">Registrati</ion-button>
+    <p>*le mail verranno usate per ricevere le notifiche</p>
+</ion-card>
+

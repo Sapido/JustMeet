@@ -1,0 +1,11 @@
+# Node build artifacts
+node_modules
+.tmp
+*.tmp
+*.tmp.*
+.DS_Store
+
+
+# Local development
+*.env
+.tests.js

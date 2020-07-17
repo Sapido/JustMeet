@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" style="color: white;">
+        <ion-back-button defaultHref="/login"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Post creati</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-card *ngFor="let post of cards">
+        <ion-card-header>
+            <ion-grid>
+                <ion-row>
+                    <ion-col size="10">
+                        <ion-card-subtitle class="nome">{{post.publisher}}</ion-card-subtitle>
+                        <ion-card-subtitle>pubblicato il: {{post.dateOfPublishing}} alle: {{post.timeOfPublishing}}</ion-card-subtitle>
+                    </ion-col>
+                    <ion-col>
+                        <ion-badge class="side">{{post.partecipants.length}}/{{post.maxPartecipants}}</ion-badge>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-header>
+        <div>
+            <ion-title>{{post.title}}</ion-title>
+            <ion-card-subtitle class="activity">{{post.activity}}</ion-card-subtitle>
+        </div>
+        <ion-card-content>
+            {{post.details}}
+        </ion-card-content>
+        <ion-footer>
+            <ion-grid>
+                <ion-row>
+                    <ion-col class="botcol">
+                        <ion-card-subtitle class="place">{{post.place}}</ion-card-subtitle>
+                    </ion-col>
+                    <ion-col class="botcol">
+                        <ion-card-subtitle class="data">{{post.dateOfEvent}}</ion-card-subtitle>
+                        <ion-card-subtitle class="ora">{{post.timeOfEvent}}</ion-card-subtitle>
+                    </ion-col>
+                    <ion-col>
+                        <ion-button (click)="moreinfo(post)" class="side">info</ion-button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-footer>
+    </ion-card>
+</ion-list>
+</ion-content>

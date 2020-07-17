@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title class="stroke">
+            Login
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<div class="image">
+    <img src="../../../assets/justmeet.PNG">
+</div>
+
+<ion-card class="formm">
+    <ion-item>
+        <ion-input [(ngModel)]='lgnuser' type="text" placeholder="Username" value=""></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-input [(ngModel)]='lgnpassword' type="Password" placeholder="Password" value=""></ion-input>
+    </ion-item>
+
+    <ion-button (click)="login()" expand="block">Log in</ion-button>
+    <ion-button expand="block" routerLink="/registration" routerDirection="forward">Registrati</ion-button>
+</ion-card>

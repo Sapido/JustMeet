@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="stroke">Profilo</ion-title>
+
+    <ion-button (click)="logout()" class="logout">
+      <ion-icon slot="icon-only" name="log-out" fill="solid"></ion-icon>
+    </ion-button>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-card>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-title><b>Nickname:</b></ion-title>
+      </ion-col>
+      <ion-col>
+        <ion-title> {{username}} </ion-title>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-title><b>E-mail:</b></ion-title>
+      </ion-col>
+      <ion-col>
+        <ion-title> {{email}} </ion-title>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-title><b>Rating:</b></ion-title>
+      </ion-col>
+      <ion-col>
+        <ion-title> {{rating}}/10</ion-title>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+  <ion-button expand="block" routerLink="yourposts" routerDirection="forward">Post creati</ion-button>
+  <ion-button expand="block" routerLink="yourgroups" routerDirection="forward">I tuoi gruppi</ion-button>
+  
+</ion-card>
+
+
+<app-botbar></app-botbar>

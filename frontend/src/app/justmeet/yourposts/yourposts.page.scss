@@ -1,0 +1,30 @@
+ion-card {
+    border: 3px solid rgb(112, 112, 112);
+}
+
+.nome {
+    font-weight: bold;
+}
+
+ion-title {
+    font-weight: bold;
+}
+
+.activity {
+    padding-left: 20px;
+    font-weight: bold;
+}
+
+.side {
+    float: right;
+    position: relative;
+}
+
+.botcol {
+    text-align: center;
+}
+
+ion-button {
+    width: 50px;
+    height: 25px;
+}
